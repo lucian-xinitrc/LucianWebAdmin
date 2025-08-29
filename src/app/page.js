@@ -53,8 +53,8 @@ export default function Home() {
               placeholder="Introdu parola"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              type="password"aria-describedby="helper-text-explanation" class="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto sm:w-2xl w-[150px] focus:outline-none" placeholder="key" />
-            <button type="submit" className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-auto sm:w-2xl md:w-[158px] mx-5">
+              type="password"aria-describedby="helper-text-explanation" class="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 p-6 sm:px-5 sm:w-auto text-[20px] sm:w-2xl w-[150px] focus:outline-none" placeholder="key" />
+            <button type="submit" className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 p-6 sm:px-5 w-auto sm:w-2xl md:w-[158px] mx-2 text-[20px]">
               Login
             </button>
           </form>
