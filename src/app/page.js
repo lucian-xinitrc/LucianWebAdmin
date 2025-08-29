@@ -82,7 +82,7 @@ export default function Home() {
                           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{requests[selectedIdx].subject}</h5>
                       </a>
                       <textarea className="mb-3 h-auto m-2 font-normal text-gray-700 dark:text-gray-400 sm:no-scrollbar">{requests[selectedIdx].message}</textarea>
-                      <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300">{requests[selectedIdx].created}</span>
+                      <textarea class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300 w-48 h-5 overflow-scroll">{requests[selectedIdx].created}</textarea>
                       <button
                         onClick={() => setSelectedIdx(null)}
                         className="md:mx-5 sm:mx-3 rounded-lg border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-auto sm:w-2xl md:w-[158px]"
