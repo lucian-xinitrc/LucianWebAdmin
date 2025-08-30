@@ -41,7 +41,7 @@ export default function Home() {
   }, []);
 
   return (
-    <section className="bg-gray-950 h-screen content-center justify-center">
+    <section className="bg-gray-950 h-screen content-center justify-center py-20">
       <h2 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">Lucian Web Services Admin App</h2>
       <div className="bg-transparent rounded-none p-5 mx-5 shadow-xl/30 rounded-lg ">
       <div>
@@ -59,34 +59,47 @@ export default function Home() {
             </button>
           </form>
         ) : (
-          <div className="bg-transparent mx-0 p-0 h-full sm:mx-[20%] shadow-xl/30 text-white rounded-none sm:no-scrollbar">
-            <div>
-          
+          <div className="bg-transparent sm:flex sm:justify-center mx-0 p-0 h-full sm:h-full sm:mx-[10%] text-white rounded-none sm:no-scrollbar">
+            <div class="max-w-sm p-10 mx-10 h-auto bg-white content-center  border border-solid border-black/[.08] dark:border-white/[.100] rounded-lg shadow-sm dark:bg-transparent dark:border-gray-700">
+                <a>
+                    <h5 class="text-2xl font-bold text-gray-900 dark:text-white">Traffic Analytics for lucianws.com and mebhevy.com</h5>
+                </a>
+                <p class="font-normal text-gray-700 dark:text-gray-400">Here will appear here</p>
+            </div>
+
+            <div className="">
+                <h5 class="mb-2 pt-10 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">Latest Requests</h5>
+
                 {selectedIdx === null && (
-                  <div className="flex flex-col gap-5 mb-2 overflow-scroll h-40 no-scrollbar">
-                  
+                  <div className="flex flex-col gap-5 mb-2 py-5 sm:w-2xl mx-5 my-2 sm:my-2 overflow-scroll h-60 sm:h-40 no-scrollbar">
+
                     {requests.map((req, idx) => (
                       <button
                         key={idx}
                         onClick={() => setSelectedIdx(idx)}
-                        className="text-left px-4 py-2 bg-transparent hover:bg-transparent text-white rounded-none border border-solid border-black/[.08] dark:border-white/[.145]"
+                        className="py-2 bg-transparent text-center bg-black transition duration-700 ease-in-out hover:bg-gray-900 text-white rounded-full border border-solid border-black/[.08] dark:border-white/[.100]"
                       >
                         {req.subject || `Request ${idx + 1}`}
+
                       </button>
                     ))}
                   </div>
                 )}
                 {selectedIdx !== null && (
-                  <div className="w-auto p-6 border border-solid border-black/[.08] dark:border-white/[.145] shadow-sm dark:bg-transparent dark:border-gray-700 sm:no-scrollbar">
+                  <div className="w-full sm:w-2xl md:w-2xs lg:w-2xl p-5 border border-solid border-black/[.08] dark:border-white/[.145] shadow-sm dark:bg-transparent dark:border-gray-700 sm:no-scrollbar rounded-lg">
                       <a>
-                          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{requests[selectedIdx].subject}</h5>
+                          <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">{requests[selectedIdx].subject}</h5>
                       </a>
-                      <textarea className="mb-3 h-auto m-2 font-normal text-gray-700 dark:text-gray-400 sm:no-scrollbar">{requests[selectedIdx].message}</textarea>
-                      <textarea class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300 w-48 h-5 overflow-scroll no-scrollbar">{requests[selectedIdx].created}</textarea>
-                      <button
-                        onClick={() => setSelectedIdx(null)}
-                        className="md:mx-5 sm:mx-3 rounded-lg border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-auto sm:w-2xl md:w-[158px]"
-                        >Close</button>
+                      <textarea className="h-auto bg-gray-900 mt-5 p-5 rounded-lg shadow-xl/10 font-normal text-gray-700 dark:text-gray-400 w-full sm:no-scrollbar">{requests[selectedIdx].message}</textarea>
+                      <div className="flex justify-center">
+                        <span class="bg-blue-100 text-blue-800 shadow-xl/10 text-sm font-medium px-2.5 py-0.5 rounded-sm dark:bg-blue-900 dark:text-blue-300 p-5 m-5">{requests[selectedIdx].created}</span>
+                      </div>
+                      <div className="flex justify-center">
+                        <button
+                          onClick={() => setSelectedIdx(null)}
+                          className="md:mx-5 sm:mx-3 rounded-lg border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-auto sm:w-2xl md:w-[158px]"
+                          >Close</button>
+                      </div>
 
                   </div>
          
